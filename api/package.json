@@ -2,11 +2,11 @@
     "name": "api",
     "version": "1.0.0",
     "description": "A travel blog with React Express Knex",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
         "test": "jest",
-        "start": "node server.js",
-        "dev": "nodemon server.js",
+        "start": "node index.js",
+        "dev": "nodemon index.js",
         "lint": "eslint"
     },
     "keywords": [],
