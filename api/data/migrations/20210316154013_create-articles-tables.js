@@ -17,6 +17,7 @@ exports.up = function (knex) {
             //Foreign key info to 'articles' table
             tbl.integer('article_id')
                 .unsigned()
+                .notNullable()
                 .references('id')
                 .inTable('articles')
                 .onDelete('CASCADE')
