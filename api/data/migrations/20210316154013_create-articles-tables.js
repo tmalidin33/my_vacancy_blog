@@ -22,6 +22,12 @@ exports.up = function (knex) {
                 .inTable('articles')
                 .onDelete('CASCADE')
                 .onUpdate('CASCADE');
+            tbl.integer('comment_id')
+                .unsigned()
+                .references('id')
+                .inTable('comments')
+                .onDelete('CASCADE')
+                .onUpdate('CASCADE');
         });
 };
 

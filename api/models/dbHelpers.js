@@ -8,6 +8,11 @@ module.exports = {
     add,
     update,
     remove,
+    findCommentById,
+    addComment,
+    // addCommentToComment,
+    findCommentByArticle,
+    removeComment,
 };
 
 function find() {
@@ -18,10 +23,9 @@ function findById(id) {
         .where({ id: Number(id) })
         .first();
 }
-function add(post) {
-    return db('articles')
-        .insert(post)
-        .then((ids) => ({ id: ids[0] }));
+async function add(post) {
+    const [id] = await db('articles').insert(post);
+    return findById(id);
 }
 function update(id, post) {
     return db('articles')
@@ -37,3 +41,34 @@ function remove(id) {
         .where({ id: Number(id) })
         .del();
 }
+function findCommentById(id) {
+    return db('comments')
+        .where({ id: Number(id) })
+        .first();
+}
+function findCommentByArticle(article_id) {
+    return db('articles as a')
+        .join('comments as c', 'a.id', 'c.article_id')
+        .select(
+            'a.id as ArticleID',
+            'a.title as ArticleTitle',
+            'c.id as CommentID',
+            'c.sender',
+            'c.text'
+        )
+        .where({ article_id });
+}
+async function addComment(newComment, article_id) {
+    const [id] = await db('comments').where({ article_id }).insert(newComment);
+    return findCommentById(id);
+}
+
+function removeComment(id) {
+    return db('comments')
+        .where({ id: Number(id) })
+        .del();
+}
+// async function addCommentToComment(newComment, article_id, comment_id) {
+//     const [id] = await db('comments').where({ article_id, comment_id }).insert(newComment);
+//     return findCommentById(id);
+// }
