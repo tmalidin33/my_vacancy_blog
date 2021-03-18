@@ -1,0 +1,26 @@
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 15px;
+    grid-auto-rows: minmax(100px, 200px);
+}
+.article-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(37, 29, 85);
+    color: #fff;
+    border-radius: 10px;
+}
+.article-card h1 {
+    margin: 0;
+    padding: 0;
+}
+.article-card h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    align-self: flex-end;
+    padding-right: 20px;
+}
