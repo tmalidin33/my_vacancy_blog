@@ -1,0 +1,21 @@
+{
+    "language": {
+        "french": "French",
+        "english": "English"
+    },
+    "header": {
+        "title": "Aventure",
+        "subtitle": "Escape within wing range",
+        "Home": "Home",
+        "Articles": "Articles"
+    },
+    "home": {
+        "parag1": " This is a <1>test</1> de Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem id delectus iusto quisquam odio pariatur recusandae debitis reprehenderit ut necessitatibus consequatur error animi tempore magni, placeat, fugiat enim quam temporibus.",
+        "parag2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui distinctio hic officia, quas nobis ipsa rem tenetur itaque. Cumque sequi saepe quas odit asperiores numquam atque ad in necessitatibus?",
+        "parag3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quam doloremque perspiciatis autem sunt voluptas dolore praesentium? Fugit earum delectus itaque voluptate omnis expedita voluptas quisquam ea, esse exercitationem dolor.",
+        "lastArticles": "Last articles"
+    },
+    "footer": {
+        "private": "Private website"
+    }
+}
