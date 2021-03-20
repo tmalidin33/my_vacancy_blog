@@ -1,3 +1,8 @@
+.articles-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .articles-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

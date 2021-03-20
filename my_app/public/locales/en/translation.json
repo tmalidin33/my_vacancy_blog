@@ -1,7 +1,8 @@
 {
     "language": {
         "french": "French",
-        "english": "English"
+        "english": "English",
+        "current": "English"
     },
     "header": {
         "title": "Aventure",
@@ -14,6 +15,13 @@
         "parag2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui distinctio hic officia, quas nobis ipsa rem tenetur itaque. Cumque sequi saepe quas odit asperiores numquam atque ad in necessitatibus?",
         "parag3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quam doloremque perspiciatis autem sunt voluptas dolore praesentium? Fugit earum delectus itaque voluptate omnis expedita voluptas quisquam ea, esse exercitationem dolor.",
         "lastArticles": "Last articles"
+    },
+    "articles": {
+        "articles": "Articles",
+        "newArticle": "Write a new article"
+    },
+    "articleCreate": {
+        "modalTitle": "Write a new article"
     },
     "footer": {
         "private": "Private website"
