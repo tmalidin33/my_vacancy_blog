@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Article from './ArticleCard';
-import ArticleCreateForm from './ArticleCreateForm';
+import ArticleCreateForm from './ArticleCreateModal';
 import Loader from '../Loader/Loader';
 import './Articles.css';
+import { Pen } from 'react-bootstrap-icons';
 
 import { useTranslation } from 'react-i18next';
 
@@ -51,7 +52,7 @@ const Articles = (props) => {
                         className="btn btn-outline-primary btn-sm"
                         onClick={handleShowModal}
                     >
-                        {t('articles.newArticle')}
+                        <Pen /> {t('articles.newArticle')}
                     </button>
                 </div>
                 <hr />

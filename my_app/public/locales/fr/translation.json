@@ -21,7 +21,23 @@
         "newArticle": "Écrire un article"
     },
     "articleCreate": {
-        "modalTitle": "Écrire un nouvel article"
+        "modalTitle": "Écrire un article",
+        "title": "Titre*",
+        "titlePlaceholder": "Titre requis",
+        "subtitle": "Sous-titre",
+        "subtitlePlaceholder": "Entrez un sous-titre",
+        "genre": "Genre",
+        "genrePlaceholder": "Entrez un genre ou un thème",
+        "desc": "Description*",
+        "descPlaceholder": "Texte requis",
+        "errors": {
+            "requiredTitle": "Requis!",
+            "requiredDesc": "Requis!",
+            "alphaTitle": "Caractères alphabétique uniquement!",
+            "noErrors": "Ok!"
+        },
+        "submit": "Valider",
+        "closeModal": "Fermer"
     },
     "footer": {
         "private": "Site privée"

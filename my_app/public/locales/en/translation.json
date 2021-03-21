@@ -21,7 +21,23 @@
         "newArticle": "Write a new article"
     },
     "articleCreate": {
-        "modalTitle": "Write a new article"
+        "modalTitle": "Write a new article",
+        "title": "Title*",
+        "titlePlaceholder": "Title required",
+        "subtitle": "Subtitle",
+        "subtitlePlaceholder": "Enter a subtitle",
+        "genre": "Genre",
+        "genrePlaceholder": "Enter a genre or a theme",
+        "desc": "Description*",
+        "descPlaceholder": "Text required",
+        "errors": {
+            "requiredTitle": "Required!",
+            "requiredDesc": "Required!",
+            "alphaTitle": "Only alpha values!",
+            "noErrors": "Looks goods!"
+        },
+        "submit": "Submit",
+        "closeModal": "Close"
     },
     "footer": {
         "private": "Private website"
