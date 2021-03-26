@@ -54,7 +54,8 @@ function findCommentByArticle(article_id) {
             'a.title as ArticleTitle',
             'c.id as CommentID',
             'c.sender',
-            'c.text'
+            'c.text',
+            'c.created_at'
         )
         .where({ article_id });
 }

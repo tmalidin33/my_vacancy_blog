@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-
 const ArticleCreateForm = (props) => {
     const { t } = useTranslation('translation');
     return (
@@ -23,7 +22,7 @@ const ArticleCreateForm = (props) => {
             }}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
+                    props.submit(values);
                     setSubmitting(false);
                 }, 400);
             }}

@@ -23,13 +23,13 @@
     "articleCreate": {
         "modalTitle": "Write a new article",
         "title": "Title*",
-        "titlePlaceholder": "Title required",
+        "titlePlaceholder": "Title",
         "subtitle": "Subtitle",
-        "subtitlePlaceholder": "Enter a subtitle",
+        "subtitlePlaceholder": "Subtitle",
         "genre": "Genre",
-        "genrePlaceholder": "Enter a genre or a theme",
+        "genrePlaceholder": "Genre or Theme",
         "desc": "Description*",
-        "descPlaceholder": "Text required",
+        "descPlaceholder": "Text",
         "errors": {
             "requiredTitle": "Required!",
             "requiredDesc": "Required!",

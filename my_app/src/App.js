@@ -8,7 +8,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Home from './Home/Home';
 import Articles from './Articles/ArticlesList';
-import ArticleView from './Articles/ArticleView';
+import ArticleViewContainer from './Articles/ArticleViewContainer';
 import NotFoundPage from './404/404';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/articles" component={Articles} />
-                            <Route path="/articles/:id" component={ArticleView} />
+                            <Route path="/articles/:id" component={ArticleViewContainer} />
                             <Route path="/404" component={NotFoundPage} />
                             <Redirect to="/404" />
                         </Switch>

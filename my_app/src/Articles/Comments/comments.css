@@ -1,0 +1,16 @@
+.commentCard {
+    display: flex;
+}
+.commentInfo {
+    margin-bottom: 10px;
+}
+.commentInfo p {
+    text-align: end;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.commentInfo .blockquote-footer {
+    font-size: 0.7rem;
+    right: 0;
+    text-align: end;
+}

@@ -3,6 +3,20 @@
     align-items: center;
     justify-content: space-between;
 }
+.newArticles_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar {
+    display: flex;
+}
+.clearField {
+    align-self: center;
+    position: absolute;
+    right: 10px;
+    z-index: 3;
+}
 .articles-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -17,6 +31,7 @@
     background-color: rgb(37, 29, 85);
     color: #fff;
     border-radius: 10px;
+    cursor: pointer;
 }
 .article-card h1 {
     margin: 0;
@@ -35,4 +50,9 @@
     margin-top: 0.25rem;
     font-size: 80%;
     color: #dc3545;
+}
+.commentsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

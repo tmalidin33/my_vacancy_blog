@@ -1,6 +1,6 @@
 import React from 'react';
 import './Articles.css';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Article = (props) => {
     const history = useHistory();
