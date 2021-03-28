@@ -69,7 +69,6 @@ router
     .post(validateComments, (req, res) => {
         const { id } = req.params;
         const comment = req.body;
-
         if (!comment.article_id) {
             comment['article_id'] = parseInt(id, 10);
         }

@@ -4,12 +4,15 @@ import { useHistory } from 'react-router-dom';
 import './ArticleMainBody';
 import ArticleMainBody from './ArticleMainBody';
 import ArticleComments from './Comments/ArticleComments.js';
+import ArticleAddComment from './Comments/ArticleAddComment.js';
 
 // import './ArticleView.css';
 const ArticleViewContainer = (props) => {
     const history = useHistory();
     const [article, setArticle] = useState({});
     const [comments, setComments] = useState({});
+    const [openForm, setOpenForm] = useState(false);
+    const [spinBtn, setSpinBtn] = useState(false);
     const id = props.match.params.id;
     const urlArticles = `http://localhost:4000/api/articles/${id}`;
     const urlComments = `http://localhost:4000/api/articles/${id}/comments`;
@@ -37,6 +40,20 @@ const ArticleViewContainer = (props) => {
             source.cancel('Component got unmounted');
         };
     }, [setArticle, setComments, history, urlArticles, urlComments]);
+
+    const handleSubmitComment = (values) => {
+        axios
+            .post(urlComments, values)
+            .then(function (res) {
+                if (res.status === 200) {
+                    setComments([...comments, res.data]);
+                    setOpenForm(false);
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
     return (
         <>
             <ArticleMainBody article={article} />
@@ -45,11 +62,18 @@ const ArticleViewContainer = (props) => {
                     <hr />
                     <div className="commentsContainer">
                         {comments.map((comment) => (
-                            <ArticleComments key={comment.CommentID} comment={comment} />
+                            <ArticleComments key={comment.id} comment={comment} />
                         ))}
                     </div>
                 </>
             )}
+            <ArticleAddComment
+                submit={handleSubmitComment}
+                openForm={openForm}
+                setOpenForm={setOpenForm}
+                spinBtn={spinBtn}
+                setSpinBtn={setSpinBtn}
+            />
         </>
     );
 };

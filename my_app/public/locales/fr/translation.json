@@ -33,11 +33,21 @@
         "errors": {
             "requiredTitle": "Requis!",
             "requiredDesc": "Requis!",
-            "alphaTitle": "Caractères alphabétique uniquement!",
-            "noErrors": "Ok!"
+            "alphaTitle": "Caractères alphabétique uniquement!"
         },
         "submit": "Valider",
         "closeModal": "Fermer"
+    },
+    "commentCreate": {
+        "Sender": "NOM Prénom*",
+        "SenderPlaceholder": "NOM Prénom",
+        "Comment": "Commentaire*",
+        "CommentPlaceholder": "Commentaire",
+        "errors": {
+            "requiredSender": "Requis!",
+            "requiredComment": "Requis!"
+        },
+        "submit": "Valider"
     },
     "footer": {
         "private": "Site privée"

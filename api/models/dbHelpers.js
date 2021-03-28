@@ -47,17 +47,7 @@ function findCommentById(id) {
         .first();
 }
 function findCommentByArticle(article_id) {
-    return db('articles as a')
-        .join('comments as c', 'a.id', 'c.article_id')
-        .select(
-            'a.id as ArticleID',
-            'a.title as ArticleTitle',
-            'c.id as CommentID',
-            'c.sender',
-            'c.text',
-            'c.created_at'
-        )
-        .where({ article_id });
+    return db('comments').where({ article_id });
 }
 async function addComment(newComment, article_id) {
     const [id] = await db('comments').where({ article_id }).insert(newComment);

@@ -50,9 +50,6 @@ const ArticleCreateForm = (props) => {
                             placeholder={t('articleCreate.titlePlaceholder')}
                             type="text"
                         />
-                        <Form.Control.Feedback>
-                            {t('articleCreate.errors.noErrors')}
-                        </Form.Control.Feedback>
                         <Form.Control.Feedback type="invalid">
                             {errors.title || 'Please enter a title'}
                         </Form.Control.Feedback>
@@ -70,9 +67,6 @@ const ArticleCreateForm = (props) => {
                             placeholder={t('articleCreate.subtitlePlaceholder')}
                             type="text"
                         />
-                        <Form.Control.Feedback>
-                            {t('articleCreate.errors.noErrors')}
-                        </Form.Control.Feedback>
                         <Form.Control.Feedback type="invalid">
                             {errors.subtitle || 'Please enter a subtitle'}
                         </Form.Control.Feedback>
@@ -90,9 +84,6 @@ const ArticleCreateForm = (props) => {
                             placeholder={t('articleCreate.genrePlaceholder')}
                             type="text"
                         />
-                        <Form.Control.Feedback>
-                            {t('articleCreate.errors.noErrors')}
-                        </Form.Control.Feedback>
                         <Form.Control.Feedback type="invalid">
                             {errors.genre || 'Only alpha cars!'}
                         </Form.Control.Feedback>
@@ -112,9 +103,6 @@ const ArticleCreateForm = (props) => {
                             placeholder={t('articleCreate.descPlaceholder')}
                             rows={6}
                         />
-                        <Form.Control.Feedback>
-                            {t('articleCreate.errors.noErrors')}
-                        </Form.Control.Feedback>
                         <Form.Control.Feedback type="invalid">
                             {errors.desc || 'Please enter some text'}
                         </Form.Control.Feedback>

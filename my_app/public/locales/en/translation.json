@@ -39,6 +39,17 @@
         "submit": "Submit",
         "closeModal": "Close"
     },
+    "commentCreate": {
+        "Sender": "NAME Surname*",
+        "SenderPlaceholder": "NAME Surname",
+        "Comment": "Comment*",
+        "CommentPlaceholder": "Comment",
+        "errors": {
+            "requiredSender": "Required!",
+            "requiredComment": "Required!"
+        },
+        "submit": "Submit"
+    },
     "footer": {
         "private": "Private website"
     }
