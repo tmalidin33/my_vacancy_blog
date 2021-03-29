@@ -54,6 +54,20 @@ const ArticleViewContainer = (props) => {
                 console.log(err);
             });
     };
+
+    const handleDeleteComment = (comment) => {
+        axios
+            .delete(`http://localhost:4000/api/comments/${comment.id}`)
+            .then(function (res) {
+                if (res.status === 204) {
+                    const filterComment = comments.filter(com => com.id !== comment.id);
+                    setComments(filterComment);
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
     return (
         <>
             <ArticleMainBody article={article} />
@@ -62,7 +76,7 @@ const ArticleViewContainer = (props) => {
                     <hr />
                     <div className="commentsContainer">
                         {comments.map((comment) => (
-                            <ArticleComments key={comment.id} comment={comment} />
+                            <ArticleComments key={comment.id} comment={comment} onDeleteComment={handleDeleteComment} />
                         ))}
                     </div>
                 </>
