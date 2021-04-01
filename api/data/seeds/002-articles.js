@@ -12,7 +12,7 @@ exports.seed = function (knex) {
                     genre: 'Drama',
                     desc:
                         'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://visiter-voyager.info/wp-content/uploads/2019/05/paysage-nature.jpg',
                     author: 10,
                 },
                 {
@@ -21,7 +21,7 @@ exports.seed = function (knex) {
                     subtitle: 'Nulla facilisi.',
                     genre: 'Drama',
                     desc: 'Curabitur convallis.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://idinterdesign.ca/wp-content/uploads/2016/07/paysage-ID-02-750x468.jpg',
                     author: 3,
                 },
                 {
@@ -31,7 +31,7 @@ exports.seed = function (knex) {
                     genre: 'Fantasy',
                     desc:
                         'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://idinterdesign.ca/wp-content/uploads/2016/07/paysage-ID-02-750x468.jpg',
                     author: 3,
                 },
                 {
@@ -41,7 +41,7 @@ exports.seed = function (knex) {
                     genre: 'Drama',
                     desc:
                         'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539__340.jpg',
                     author: 6,
                 },
                 {
@@ -52,7 +52,7 @@ exports.seed = function (knex) {
                     genre: 'Western',
                     desc:
                         'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539__340.jpg',
                     author: 8,
                 },
                 {
@@ -62,7 +62,7 @@ exports.seed = function (knex) {
                     genre: 'Comedy',
                     desc:
                         'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS15ibatyu37V6UigFEUnV101OFTRZv4dUHgPJ9FS3fHc4rtWN99_IKk5OyFnURxEvjaIY&usqp=CAU',
                     author: 4,
                 },
                 {
@@ -72,7 +72,7 @@ exports.seed = function (knex) {
                     genre: 'Drama',
                     desc:
                         'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0jyi8dm9rNQneoEGJpIBLCcvx46UMPfIbpP6YabLl2-N_aqdqhxYcLT7miMJSa-4k2c&usqp=CAU',
                     author: 9,
                 },
                 {
@@ -82,7 +82,7 @@ exports.seed = function (knex) {
                     genre: 'Drama',
                     desc:
                         'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://resize-elle.ladmedia.fr/rcrop/638,,forcex/img/var/plain_site/storage/images/loisirs/evasion/paysage-ensoleille/90705820-1-fre-FR/Ces-paysages-ensoleilles-boosteront-votre-moral-toute-l-annee.jpg',
                     author: 10,
                 },
                 {
@@ -92,7 +92,7 @@ exports.seed = function (knex) {
                     genre: 'Comedy',
                     desc:
                         'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://archzine.fr/wp-content/uploads/2019/05/ac%CC%A7ores-portugal-le-plus-beau-pays-du-monde-paysage-magnifique-se%CC%81tonner-de-la-beaute%CC%81-de-la-terre.jpg',
                     author: 5,
                 },
                 {
@@ -103,7 +103,7 @@ exports.seed = function (knex) {
                     genre: 'Comedy',
                     desc:
                         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://i.skyrock.net/8295/99418295/pics/3323048900_1_3_wg7JRKeW.jpg',
                     author: 7,
                 },
                 {
@@ -112,7 +112,7 @@ exports.seed = function (knex) {
                     subtitle: 'Sed vel enim sit amet nunc viverra dapibus.',
                     genre: 'Documentary',
                     desc: 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://images-na.ssl-images-amazon.com/images/I/61rRm%2B0rEPL._AC_SL1010_.jpg',
                     author: 2,
                 },
                 {
@@ -121,7 +121,7 @@ exports.seed = function (knex) {
                     subtitle: 'Mauris lacinia sapien quis libero.',
                     genre: 'Drama',
                     desc: 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://cdn-arts.konbini.com/images/files/2020/02/sander-grefte.jpg?webp=',
                     author: 8,
                 },
                 {
@@ -130,7 +130,7 @@ exports.seed = function (knex) {
                     subtitle: 'Etiam justo.',
                     genre: 'Drama',
                     desc: 'Suspendisse potenti.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmLvUhd7Mm_OEldvMg5ELPppCYdbg8Bphbyw&usqp=CAU',
                     author: 9,
                 },
                 {
@@ -140,7 +140,7 @@ exports.seed = function (knex) {
                     genre: 'Musical',
                     desc:
                         'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
-                    image_url: 'https://source.unsplash.com/1600x900/?nature',
+                    image_url: 'https://www.tartinvillephoto.com/wp-content/uploads/2020/03/PAYSAGES-.jpg',
                     author: 7,
                 },
                 {

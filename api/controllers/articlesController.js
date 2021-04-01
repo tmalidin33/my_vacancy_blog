@@ -4,7 +4,7 @@ function articlesController() {
     function post(req, res) {
         Articles.add(req.body)
             .then((article) => {
-                return res.status(200).json(article);
+                return res.status(201).json(article);
             })
             .catch((err) => {
                 return res.status(500).json({ message: 'Cannot insert article' });

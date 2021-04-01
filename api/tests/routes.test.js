@@ -49,4 +49,24 @@ describe('Test Endpoints', () => {
             done();
         });
     });
+    describe('Post endpoints', () => {
+        it('should post article', (done) => {
+            const data ={
+                "title":'test',
+                "subtitle":'test',
+                'desc':'test',
+                'genre':'fantasy',
+                'author':1
+            }
+            request(app)
+                .post('/api/articles')
+                .send(data)
+                .set('Accept', 'application/json')
+                .expect(201)
+                .end(err=>{
+                    if(err)return done(err);
+                    done();
+                })
+        });
+    });
 });
