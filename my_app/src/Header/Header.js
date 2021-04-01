@@ -12,7 +12,6 @@ const Header = (props) => {
         i18n.changeLanguage(code);
     };
     const currentLanguage = i18n.language;
-    console.log(currentLanguage);
     return (
         <header>
             <Navbar bg="light" expand="lg">
@@ -29,12 +28,23 @@ const Header = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <NavLink id="home-link" exact={true} activeClassName="active" to="/">
+                            <NavLink
+                                id="home-link"
+                                exact={true}
+                                data-testid="home-label"
+                                activeClassName="active"
+                                to="/"
+                            >
                                 {t('header.Home')}
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink id="articles-link" activeClassName="active" to="/articles">
+                            <NavLink
+                                id="articles-link"
+                                data-testid="article-label"
+                                activeClassName="active"
+                                to="/articles"
+                            >
                                 {t('header.Articles')}
                             </NavLink>
                         </li>
@@ -51,6 +61,7 @@ const Header = (props) => {
                                 )
                             }
                             id="basic-nav-dropdown"
+                            data-testid="lg-dropdown"
                         >
                             <NavDropdown.Item onClick={() => changeLanguage('fr')}>
                                 <span className="flag-icon flag-icon-fr"></span>{' '}

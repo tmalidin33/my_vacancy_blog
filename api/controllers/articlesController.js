@@ -24,7 +24,6 @@ function articlesController() {
                     const filterArticles = returnArticles.filter((article) => {
                         return article.title.toLowerCase().includes(queryTitle);
                     });
-                    console.log(filterArticles);
                     return res.status(200).json(filterArticles);
                 }
                 return res.status(200).json(returnArticles);
