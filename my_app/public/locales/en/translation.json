@@ -30,11 +30,13 @@
         "genrePlaceholder": "Genre or Theme",
         "desc": "Description*",
         "descPlaceholder": "Text",
+        "author": "Author*",
+        "authorPlaceholder": "Author",
         "errors": {
             "requiredTitle": "Required!",
             "requiredDesc": "Required!",
-            "alphaTitle": "Only alpha values!",
-            "noErrors": "Looks goods!"
+            "requiredAuthor": "Required!",
+            "alphaTitle": "Only alpha values!"
         },
         "submit": "Submit",
         "closeModal": "Close"

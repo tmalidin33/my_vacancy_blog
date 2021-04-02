@@ -1,12 +1,12 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 const ArticleCreateForm = (props) => {
     const { t } = useTranslation('translation');
     return (
         <Formik
-            initialValues={{ title: '', subtitle: '', genre: '', desc: '' }}
+            initialValues={{ title: '', subtitle: '', genre: '', desc: '', author: '' }}
             validate={(values) => {
                 const errors = {};
                 if (!values.title) {
@@ -17,6 +17,9 @@ const ArticleCreateForm = (props) => {
                 }
                 if (values.genre && !values.genre.match(/^[a-z]+$/i)) {
                     errors.genre = t('articleCreate.errors.alphaTitle');
+                }
+                if (!values.author) {
+                    errors.author = t('articleCreate.errors.requiredAuthor');
                 }
                 return errors;
             }}
@@ -71,23 +74,47 @@ const ArticleCreateForm = (props) => {
                             {errors.subtitle || 'Please enter a subtitle'}
                         </Form.Control.Feedback>
                     </Form.Group>
-
-                    <Form.Group controlId="genreControl">
-                        <Form.Label>{t('articleCreate.genre')}</Form.Label>
-                        <Form.Control
-                            name="genre"
-                            value={values.genre}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            isValid={touched.genre && !errors.genre}
-                            isInvalid={touched.genre && errors.genre}
-                            placeholder={t('articleCreate.genrePlaceholder')}
-                            type="text"
-                        />
-                        <Form.Control.Feedback type="invalid">
-                            {errors.genre || 'Only alpha cars!'}
-                        </Form.Control.Feedback>
-                    </Form.Group>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="genreControl">
+                            <Form.Label>{t('articleCreate.genre')}</Form.Label>
+                            <Form.Control
+                                name="genre"
+                                value={values.genre}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                isValid={touched.genre && !errors.genre}
+                                isInvalid={touched.genre && errors.genre}
+                                placeholder={t('articleCreate.genrePlaceholder')}
+                                type="text"
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.genre || 'Only alpha cars!'}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="authorControl">
+                            <Form.Label>{t('articleCreate.author')}</Form.Label>
+                            <Form.Control
+                                as="select"
+                                defaultValue={t('articleCreate.authorPlaceholder')}
+                                name="author"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                isValid={touched.author && !errors.author}
+                                isInvalid={touched.author && errors.author}
+                                placeholder={t('articleCreate.authorPlaceholder')}
+                            >
+                                <option disabled>{t('articleCreate.authorPlaceholder')}</option>
+                                {props.authors.map((aut) => (
+                                    <option value={aut.userId} key={aut.userId}>
+                                        {aut.first_name + ' ' + aut.last_name}
+                                    </option>
+                                ))}
+                            </Form.Control>
+                            <Form.Control.Feedback type="invalid">
+                                {errors.authors || 'Please select an author!'}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+                    </Form.Row>
 
                     <Form.Group controlId="titleControl">
                         <Form.Label>{t('articleCreate.desc')}</Form.Label>

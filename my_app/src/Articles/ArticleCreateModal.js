@@ -15,7 +15,7 @@ const ArticleCreateModal = (props) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <ArticleCreateForm submit={props.onSubmit}/>
+                <ArticleCreateForm submit={props.onSubmit} authors={props.authors} />
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>{t('articleCreate.closeModal')}</Button>

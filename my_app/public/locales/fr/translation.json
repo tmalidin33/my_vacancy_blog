@@ -30,9 +30,12 @@
         "genrePlaceholder": "Genre ou thème",
         "desc": "Description*",
         "descPlaceholder": "Texte",
+        "author": "Auteur*",
+        "authorPlaceholder": "Auteur",
         "errors": {
             "requiredTitle": "Requis!",
             "requiredDesc": "Requis!",
+            "requiredAuthor": "Requis!",
             "alphaTitle": "Caractères alphabétique uniquement!"
         },
         "submit": "Valider",

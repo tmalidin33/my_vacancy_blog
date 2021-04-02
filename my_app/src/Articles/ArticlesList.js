@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 
 const Articles = (props) => {
     const [articles, setArticles] = useState([]);
+    const [authors, setAuthors] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
 
@@ -37,10 +38,28 @@ const Articles = (props) => {
             }
         };
         fetchArticles();
+        const source2 = axios.CancelToken.source();
+        const fetchUsers = async () => {
+            try {
+                const res = await axios.get('http://localhost:4000/api/users', {
+                    cancelToken: source2.token,
+                });
+                setTimeout(() => {
+                    setAuthors(res.data);
+                }, 200);
+            } catch (error) {
+                if (axios.isCancel(error)) {
+                } else {
+                    throw error;
+                }
+            }
+        };
+        fetchUsers();
         return () => {
             source.cancel();
+            source2.cancel();
         };
-    }, [setArticles, setLoading]);
+    }, [setArticles, setLoading, setAuthors]);
 
     const handleShowModal = (e) => {
         setShowModal(true);
@@ -51,7 +70,7 @@ const Articles = (props) => {
         axios
             .post('http://localhost:4000/api/articles', values)
             .then(function (res) {
-                if (res.status === 200) {
+                if (res.status === 201) {
                     setArticles([...articles, res.data]);
                     setShowModal(false);
                     setLoading(false);
@@ -113,6 +132,7 @@ const Articles = (props) => {
                             show={showModal}
                             onSubmit={handleSubmit}
                             onHide={() => setShowModal(false)}
+                            authors={authors}
                         />
                     </>
                 )}
