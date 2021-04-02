@@ -1,4 +1,4 @@
-const Articles = require('../models/dbHelpers');
+const Articles = require('../models/dbArticlesHelpers');
 
 function articlesController() {
     function post(req, res) {

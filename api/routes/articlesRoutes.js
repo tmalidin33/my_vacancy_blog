@@ -1,7 +1,7 @@
 const express = require('express');
-const Articles = require('../models/dbHelpers');
+const Articles = require('../models/dbArticlesHelpers');
+const Comments = require('../models/dbCommentsHelpers');
 const articlesController = require('../controllers/articlesController');
-const { check, validationResult } = require('express-validator');
 
 const router = express.Router();
 const controller = articlesController();
@@ -73,7 +73,7 @@ router
             comment['article_id'] = parseInt(id, 10);
         }
 
-        Articles.addComment(comment, id)
+        Comments.add(comment, id)
             .then((comment) => {
                 res.status(200).json(comment);
             })
@@ -83,7 +83,7 @@ router
     })
     .get((req, res) => {
         const { id } = req.params;
-        Articles.findCommentByArticle(id)
+        Comments.findByArticle(id)
             .then((comments) => {
                 res.status(200).json(comments);
             })

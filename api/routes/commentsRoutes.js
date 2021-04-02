@@ -1,11 +1,11 @@
 const express = require('express');
-const Articles = require('../models/dbHelpers');
+const Comments = require('../models/dbCommentsHelpers');
 
 const router = express.Router();
 
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    Articles.removeComment(id)
+    Comments.remove(id)
         .then((count) => {
             if (count > 0) {
                 res.status(204).json({ message: `Message with id ${id} successfully deleted` });

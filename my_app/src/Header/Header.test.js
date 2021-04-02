@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 jest.mock('react-i18next', () => ({
     useTranslation: () => {

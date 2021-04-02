@@ -11,6 +11,7 @@ exports.validateArticle = [
         .bail(),
     check('genre').isAlpha().withMessage('Genre must contains alpha caracters!').bail(),
     check('desc').not().isEmpty().withMessage('Article text cannot be empty!').bail(),
+    check('author').not().isEmpty(),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) return res.status(422).json({ errors: errors.array() });
