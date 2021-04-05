@@ -12,7 +12,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
 server.get('/', (req, res) => {
-    res.send('<h1>Welcome to the Blog server</h1>');
+    res.send('<h1>Welcome to the Blog server !</h1>');
 });
 
 server.use('/api/articles', articlesRouter);
