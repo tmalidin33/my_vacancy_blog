@@ -1,0 +1,28 @@
+.users-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 15px;
+    grid-auto-rows: minmax(100px, 300px);
+}
+.users-container .card-ctn {
+    overflow: hidden;
+}
+.card-ctn .img-ctn {
+    height: 100%;
+    object-fit: cover;
+}
+.card-ctn .user_info.card-body {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+}
+.card-ctn .card-body {
+    opacity: 0;
+}
+.user_info.card-body .card-subtitle {
+    margin-bottom: 1rem;
+    color: #bbb;
+}

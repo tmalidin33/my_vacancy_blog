@@ -1,29 +1,36 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+
 import Article from './ArticleCard';
 import ArticleCreateForm from './ArticleCreateModal';
 import SearchArticles from './SearchArticles';
 import Loader from '../Loader/Loader';
+import { Breadcrumb } from 'react-bootstrap';
 import './Articles.css';
+
 import { Pen } from 'react-bootstrap-icons';
 
 import { useTranslation } from 'react-i18next';
 
 const Articles = (props) => {
     const [articles, setArticles] = useState([]);
-    const [authors, setAuthors] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
 
     const { t } = useTranslation('translation');
-
+    const search = useLocation().search;
     useEffect(() => {
         const source = axios.CancelToken.source();
         const fetchArticles = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/articles', {
+                let url = 'http://localhost:4000/api/articles';
+                if (search) {
+                    url += search;
+                }
+                const res = await axios.get(url, {
                     cancelToken: source.token,
                 });
                 setTimeout(() => {
@@ -38,28 +45,10 @@ const Articles = (props) => {
             }
         };
         fetchArticles();
-        const source2 = axios.CancelToken.source();
-        const fetchUsers = async () => {
-            try {
-                const res = await axios.get('http://localhost:4000/api/users', {
-                    cancelToken: source2.token,
-                });
-                setTimeout(() => {
-                    setAuthors(res.data);
-                }, 200);
-            } catch (error) {
-                if (axios.isCancel(error)) {
-                } else {
-                    throw error;
-                }
-            }
-        };
-        fetchUsers();
         return () => {
             source.cancel();
-            source2.cancel();
         };
-    }, [setArticles, setLoading, setAuthors]);
+    }, [search, setArticles, setLoading]);
 
     const handleShowModal = (e) => {
         setShowModal(true);
@@ -99,6 +88,10 @@ const Articles = (props) => {
     };
     return (
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href="/">{t('header.Home')}</Breadcrumb.Item>
+                <Breadcrumb.Item href="/articles">{t('header.Articles')}</Breadcrumb.Item>
+            </Breadcrumb>
             <div className="container">
                 <div className="articles-header">
                     <h1>{t('articles.articles')}</h1>
@@ -132,7 +125,6 @@ const Articles = (props) => {
                             show={showModal}
                             onSubmit={handleSubmit}
                             onHide={() => setShowModal(false)}
-                            authors={authors}
                         />
                     </>
                 )}

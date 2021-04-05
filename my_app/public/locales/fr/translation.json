@@ -8,7 +8,8 @@
         "title": "Aventure",
         "subtitle": "L'escape à portée d'aile",
         "Home": "Accueil",
-        "Articles": "Articles"
+        "Articles": "Articles",
+        "Users": "Utilisateurs"
     },
     "home": {
         "parag1": " Ceci est un <1>test</1> de Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem id delectus iusto quisquam odio pariatur recusandae debitis reprehenderit ut necessitatibus consequatur error animi tempore magni, placeat, fugiat enim quam temporibus.",
@@ -51,6 +52,9 @@
             "requiredComment": "Requis!"
         },
         "submit": "Valider"
+    },
+    "users": {
+        "seeArticles": "Voir les articles"
     },
     "footer": {
         "private": "Site privée"

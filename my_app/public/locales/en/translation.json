@@ -8,7 +8,8 @@
         "title": "Aventure",
         "subtitle": "Escape within wing range",
         "Home": "Home",
-        "Articles": "Articles"
+        "Articles": "Articles",
+        "Users": "Users"
     },
     "home": {
         "parag1": " This is a <1>test</1> de Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem id delectus iusto quisquam odio pariatur recusandae debitis reprehenderit ut necessitatibus consequatur error animi tempore magni, placeat, fugiat enim quam temporibus.",
@@ -51,6 +52,9 @@
             "requiredComment": "Required!"
         },
         "submit": "Submit"
+    },
+    "users": {
+        "seeArticles": "See Articles"
     },
     "footer": {
         "private": "Private website"

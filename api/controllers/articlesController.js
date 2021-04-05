@@ -26,6 +26,13 @@ function articlesController() {
                     });
                     return res.status(200).json(filterArticles);
                 }
+                if (req.query.author) {
+                    const queryAuthor = req.query.author;
+                    const filterArticles = returnArticles.filter((article) => {
+                        return article.author == queryAuthor;
+                    });
+                    return res.status(200).json(filterArticles);
+                }
                 return res.status(200).json(returnArticles);
             })
             .catch((err) => {

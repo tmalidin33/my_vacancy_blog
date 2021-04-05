@@ -8,7 +8,7 @@ const Article = (props) => {
     return (
         <div
             className="article-card"
-            style={{ backgroundImage: `url("${image_url}")` }}
+            style={{ backgroundImage: `url("${image_url}")`, backgroundSize: 'cover' }}
             onClick={() => history.push(`/articles/${id}`)}
         >
             <h1>{title}</h1>

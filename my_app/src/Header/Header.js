@@ -48,6 +48,16 @@ const Header = (props) => {
                                 {t('header.Articles')}
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink
+                                id="users-link"
+                                data-testid="user-label"
+                                activeClassName="active"
+                                to="/users"
+                            >
+                                {t('header.Users')}
+                            </NavLink>
+                        </li>
                         <NavDropdown
                             title={
                                 currentLanguage === 'fr' ? (

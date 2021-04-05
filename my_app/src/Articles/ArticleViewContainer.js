@@ -1,18 +1,24 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Breadcrumb } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './ArticleMainBody';
 import ArticleMainBody from './ArticleMainBody';
 import ArticleComments from './Comments/ArticleComments.js';
 import ArticleAddComment from './Comments/ArticleAddComment.js';
 
+import { useTranslation } from 'react-i18next';
+
 // import './ArticleView.css';
 const ArticleViewContainer = (props) => {
     const history = useHistory();
+    const { t } = useTranslation('translation');
+    
     const [article, setArticle] = useState({});
     const [comments, setComments] = useState({});
     const [openForm, setOpenForm] = useState(false);
     const [spinBtn, setSpinBtn] = useState(false);
+
     const id = props.match.params.id;
     const urlArticles = `http://localhost:4000/api/articles/${id}`;
     const urlComments = `http://localhost:4000/api/articles/${id}/comments`;
@@ -60,23 +66,32 @@ const ArticleViewContainer = (props) => {
             .delete(`http://localhost:4000/api/comments/${comment.id}`)
             .then(function (res) {
                 if (res.status === 204) {
-                    const filterComment = comments.filter(com => com.id !== comment.id);
+                    const filterComment = comments.filter((com) => com.id !== comment.id);
                     setComments(filterComment);
                 }
             })
             .catch((err) => {
                 console.log(err);
             });
-    }
+    };
     return (
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href="/">{t('header.Home')}</Breadcrumb.Item>
+                <Breadcrumb.Item href="/articles">{t('header.Articles')}</Breadcrumb.Item>
+                <Breadcrumb.Item href={"/articles/"+article.id}>{article.title}</Breadcrumb.Item>
+            </Breadcrumb>
             <ArticleMainBody article={article} />
             {comments.length > 0 && (
                 <>
                     <hr />
                     <div className="commentsContainer">
                         {comments.map((comment) => (
-                            <ArticleComments key={comment.id} comment={comment} onDeleteComment={handleDeleteComment} />
+                            <ArticleComments
+                                key={comment.id}
+                                comment={comment}
+                                onDeleteComment={handleDeleteComment}
+                            />
                         ))}
                     </div>
                 </>
