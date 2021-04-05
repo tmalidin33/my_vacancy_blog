@@ -26,7 +26,7 @@ const Articles = (props) => {
         const source = axios.CancelToken.source();
         const fetchArticles = async () => {
             try {
-                let url = 'http://localhost:4000/api/articles';
+                let url = '/api/articles';
                 if (search) {
                     url += search;
                 }
@@ -57,7 +57,7 @@ const Articles = (props) => {
     const handleSubmit = (values) => {
         setLoading(true);
         axios
-            .post('http://localhost:4000/api/articles', values)
+            .post('/api/articles', values)
             .then(function (res) {
                 if (res.status === 201) {
                     setArticles([...articles, res.data]);
@@ -72,7 +72,7 @@ const Articles = (props) => {
     const handleClick = (values) => {
         setLoading(true);
         axios
-            .get(`http://localhost:4000/api/articles?title=${values}`)
+            .get(`/api/articles?title=${values}`)
             .then((res) => {
                 if (res.status === 200) {
                     setTimeout(() => {

@@ -10,7 +10,7 @@ const Users = () => {
         const source = axios.CancelToken.source();
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/users', {
+                const res = await axios.get('/api/users', {
                     cancelToken: source.token,
                 });
                 setTimeout(() => {

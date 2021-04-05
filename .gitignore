@@ -1,3 +1,5 @@
 api/node_modules
+api/.env
+api/.env.test
 my_app/node_modules
 .vscode

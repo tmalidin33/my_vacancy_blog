@@ -13,15 +13,15 @@ import { useTranslation } from 'react-i18next';
 const ArticleViewContainer = (props) => {
     const history = useHistory();
     const { t } = useTranslation('translation');
-    
+
     const [article, setArticle] = useState({});
     const [comments, setComments] = useState({});
     const [openForm, setOpenForm] = useState(false);
     const [spinBtn, setSpinBtn] = useState(false);
 
     const id = props.match.params.id;
-    const urlArticles = `http://localhost:4000/api/articles/${id}`;
-    const urlComments = `http://localhost:4000/api/articles/${id}/comments`;
+    const urlArticles = `/api/articles/${id}`;
+    const urlComments = `/api/articles/${id}/comments`;
 
     useEffect(() => {
         let source = axios.CancelToken.source();
@@ -63,7 +63,7 @@ const ArticleViewContainer = (props) => {
 
     const handleDeleteComment = (comment) => {
         axios
-            .delete(`http://localhost:4000/api/comments/${comment.id}`)
+            .delete(`/api/comments/${comment.id}`)
             .then(function (res) {
                 if (res.status === 204) {
                     const filterComment = comments.filter((com) => com.id !== comment.id);
@@ -79,7 +79,7 @@ const ArticleViewContainer = (props) => {
             <Breadcrumb>
                 <Breadcrumb.Item href="/">{t('header.Home')}</Breadcrumb.Item>
                 <Breadcrumb.Item href="/articles">{t('header.Articles')}</Breadcrumb.Item>
-                <Breadcrumb.Item href={"/articles/"+article.id}>{article.title}</Breadcrumb.Item>
+                <Breadcrumb.Item href={'/articles/' + article.id}>{article.title}</Breadcrumb.Item>
             </Breadcrumb>
             <ArticleMainBody article={article} />
             {comments.length > 0 && (
